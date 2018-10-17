@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,800');
+
+body, html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+	font-family: 'Montserrat', sans-serif;
+	background: linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(63,59,54,1) 100%); 
+}
+
+.sidebar {
+	background-color: rgb(247, 247, 247);
+	float: left;
+	width: 270px;
+	height: 100%;
+	position: absolute;
+	z-index: 98;
+
+	transform: translateX(-220px);
+	transition: all 0.7s ease-out;
+}
+.sidebar:hover {
+	transform: translateX(0);
+}
+.sidebar-text-wrapper {
+	height: 100%;
+	width: 100%;
+	margin-top: -20px;
+	padding-top: 20px; 
+	opacity: 0;
+	transition: all 0.7s;
+}
+.sidebar-text-wrapper:hover {
+	opacity: 1;
+}
+.sidebar-text-wrapper h1 {
+	padding-top: 40px;
+	text-transform: uppercase;
+	text-align: center;
+}
+.sidebar ul {
+	list-style-type: none;
+	text-align: left;
+	margin-top: 40px;
+}
+.sidebar ul li a {
+	text-decoration: none;
+	display: inline-block;
+	color: #000;
+	padding: 15px;
+}
+
+.text-box {
+	display: inline-block;
+	float: left;
+}
+
+
+.loader {
+	position: fixed;
+	z-index: 99;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(63,59,54,1) 100%); 
+}
+
+.loader.hidden {
+	animation: fadeOut 1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+	100% {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+.loader-frame {
+	width: 100px;
+	height: 100px;
+	margin: 30vh auto;
+	position: relative;
+}
+.loader-ring, .loader-ring-2 {
+	position: absolute;
+	border: 5px solid transparent;
+	
+	
+}
+
+.loader-ring {
+	width: 70px;
+	height: 70px;
+	border-radius: 50%;
+	border: 5px solid rgb(247, 247, 247);
+	box-shadow: 2px 2px 5px #222;
+	top: 15px;
+	left: 15px;
+	animation: loaderRotate 1.3s ease-out 2;
+}
+.loader-ring-2 {
+	width: 30px;
+	height: 30px;
+	border-radius: 0%;
+	border: 5px solid tomato;
+	box-shadow: 2px 2px 5px #222;
+	top: 35px;
+	left: 35px;
+	animation: loaderRotate-2 1.3s linear 2;
+}
+.loader-ring-3 {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 5px solid red;
+	animation: loaderRotate-3 1.3s ease-out 2;
+}
+@keyframes loaderRotate {
+	0% {transform: rotate(0deg);}
+	50% {border-radius: 0%;}
+	100% {
+		border-radius: 50%;
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes loaderRotate-2 {
+	0% {transform: rotate(0deg);}
+	50% {border-radius: 50%;}
+	100% {transform: rotate(360deg);}
+}
+
+@keyframes loaderRotate-3 {
+	0% {transform: scale(1);}
+	100% {
+		transform: scale(2);
+		opacity: 0;
+	}
+}
+
+
+/*-------------Content-----------------*/
+.content {
+	margin-left: 200px;
+	margin-right: 20vw;
+	padding-top: 50px;
+	color: #ddd;
+}
+.content h2 {
+	font-size: 500%;
+	font-weight: 800;
+	visibility: hidden;
+	transition: all .5s;
+	animation: appearingLeft 1s ease-out 2s forwards;
+}
+
+@keyframes appearingLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+	100% {
+		opacity: 1;
+		visibility: visible;
+		transform: translateX(0);
+	}
+}
+
+.content h2:hover {
+	color: tomato;
+	cursor: default;
+	font-size: 530%;
+}
+
+/*--------------Projects.html---------------*/
+.photo-element {
+	width: 10rem;
+	height: 10vh;
+	display: inline-block;
+	background-color: tomato;
+	border: 2px solid #333;
+	transition: all 0.3s;
+}
+.photo-element:hover {
+	height: 15rem;
+}
